@@ -1,5 +1,6 @@
 package com.example.jchuah.myapplication;
 //kael's swag program cause he's chill
+
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -19,13 +20,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
     }
 
-    public void onNextClick(View source)
-    {
-    Log.i(tag, "Launching color activity");
-    Intent colorActivityIntent = new Intent(this, ColorActivity.class);
-    startActivity(colorActivityIntent, sendBundle);
+    public void onNextClick(View source) {
+        Log.i(tag, "Launching color activity");
+        Intent colorActivityIntent = new Intent(this, ColorActivity.class);
+        sendBundle.putString("name", "Tom");
+
+        colorActivityIntent.putExtra("groceries", sendBundle);
+
+        startActivity(colorActivityIntent);
     }
 
     @Override

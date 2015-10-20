@@ -2,6 +2,7 @@ package com.example.jchuah.myapplication;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -11,6 +12,8 @@ public class ColorActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.colorscreen);
+        Bundle grocies = getIntent().getBundleExtra("groceries");
+        Log.i("GROCERIES!", grocies.getString("name"));
     }
 
     @Override
