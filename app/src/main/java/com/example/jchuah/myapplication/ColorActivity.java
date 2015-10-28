@@ -1,19 +1,33 @@
 package com.example.jchuah.myapplication;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
 
 public class ColorActivity extends AppCompatActivity {
+
+    static String tag = "com.example.jchuah.myapplication";
+
+    Bundle groceries;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.colorscreen);
-        Bundle grocies = getIntent().getBundleExtra("groceries");
-        Log.i("GROCERIES!", grocies.getString("name"));
+        groceries = getIntent().getBundleExtra("groceries");
+        Log.i("GROCERIES!", groceries.getString("name"));
+    }
+
+
+    public  void onColorClick(View Source)
+    {
+        Toast.makeText(this, "Test", Toast.LENGTH_SHORT);
+        Log.i(tag, "Launching Name and Color activity");
     }
 
     @Override

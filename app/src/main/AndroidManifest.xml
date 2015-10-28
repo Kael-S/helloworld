@@ -24,6 +24,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.jchuah.myapplication.MainActivity" />
         </activity>
+        <activity
+            android:name=".NameandColor"
+            android:label="@string/title_activity_nameand_color" >
+        </activity>
     </application>
 
 </manifest>

@@ -1,44 +1,22 @@
 package com.example.jchuah.myapplication;
-//kael's swag program cause he's chill
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
-
-    static String tag = "com.example.jchuah.myapplication";
-
-    Bundle sendBundle = new Bundle();
+public class NameandColor extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-    }
-
-    public void onNextClick(View source) {
-        Log.i(tag, "Launching color activity");
-        EditText e = (EditText)findViewById(R.id.editText);
-        Intent colorActivityIntent = new Intent(this, ColorActivity.class);
-        sendBundle.putString("name", e.getText().toString());
-
-        colorActivityIntent.putExtra("groceries", sendBundle);
-
-        startActivity(colorActivityIntent);
+        setContentView(R.layout.activity_nameand_color);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_nameand_color, menu);
         return true;
     }
 
