@@ -26,8 +26,10 @@ public class ColorActivity extends AppCompatActivity {
 
     public  void onColorClick(View Source)
     {
-        Toast.makeText(this, "Test", Toast.LENGTH_SHORT);
         Log.i(tag, "Launching Name and Color activity");
+        Intent NameColor = new Intent(this, NameandColor.class);
+        startActivity(NameColor);
+
     }
 
     @Override
