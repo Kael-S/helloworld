@@ -2,15 +2,31 @@ package com.example.jchuah.myapplication;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 public class NameandColor extends AppCompatActivity {
+
+    Bundle groceries;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nameand_color);
+        groceries = getIntent().getBundleExtra("groceries");
+        Log.i("GROCERIES!", groceries.getString("name"));
+        Log.i("GROCERIES!", groceries.getInt("colorclick") + "");
+
+        TextView e = (TextView)findViewById(R.id.Name);
+        
+        Log.i("a;lsdkfjalsdjf", e.toString());
     }
 
     @Override

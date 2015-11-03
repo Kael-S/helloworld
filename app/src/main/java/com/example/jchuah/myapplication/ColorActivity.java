@@ -1,19 +1,42 @@
 package com.example.jchuah.myapplication;
 
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
+
+import javax.xml.transform.Source;
 
 public class ColorActivity extends AppCompatActivity {
 
     static String tag = "com.example.jchuah.myapplication";
 
     Bundle groceries;
+
+    Bundle sendBundle = new Bundle();
+
+
+    public  void onColorClick(View source) {
+        Log.i(tag, "Launching Name and Color activity");
+        Intent NameColor = new Intent(this, NameandColor.class);
+        NameColor.putExtra("groceries", groceries);
+
+        Button colorButton = (Button) source;
+        ColorDrawable bgColor = (ColorDrawable) source.getBackground();
+
+        groceries.putInt("colorclick", bgColor.getColor());
+
+        startActivity(NameColor);
+    }
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,14 +46,6 @@ public class ColorActivity extends AppCompatActivity {
         Log.i("GROCERIES!", groceries.getString("name"));
     }
 
-
-    public  void onColorClick(View Source)
-    {
-        Log.i(tag, "Launching Name and Color activity");
-        Intent NameColor = new Intent(this, NameandColor.class);
-        startActivity(NameColor);
-
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
