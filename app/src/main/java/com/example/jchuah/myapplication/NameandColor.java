@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -20,13 +21,18 @@ public class NameandColor extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nameand_color);
+
+
         groceries = getIntent().getBundleExtra("groceries");
         Log.i("GROCERIES!", groceries.getString("name"));
-        Log.i("GROCERIES!", groceries.getInt("colorclick") + "");
+        String name = groceries.getString("name");
+        TextView nametextview = (TextView)findViewById(R.id.Nametextview);
+        nametextview.setText(name);
 
-        TextView e = (TextView)findViewById(R.id.Name);
-        
-        Log.i("a;lsdkfjalsdjf", e.toString());
+
+        String background = groceries.getString("colorclick");
+        RelativeLayout backgroundrealtivelayout = (RelativeLayout)findViewById(R.id.background);
+        backgroundrealtivelayout.setBackgroundColor(groceries.getInt("colorclick"));
     }
 
     @Override
